@@ -1,0 +1,10 @@
+<nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo" [routerLink]="['/']">Task manager</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li *ngIf="(!logOut)"><a *ngIf="!logOut" [routerLink]="['/cabinet']">Привет, {{name}}!</a></li>
+        <li *ngIf="logOut"><a class="waves-effect waves-light btn" [routerLink]="['/authorization']">Войти</a></li>
+        <li *ngIf="!logOut"><a  (click)="onLogOut()" class="waves-effect waves-light btn" >Выйти</a></li>
+      </ul>
+    </div>
+  </nav>

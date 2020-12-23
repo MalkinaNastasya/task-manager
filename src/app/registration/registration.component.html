@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 class="mb-3">Регистрация</h2>
+        <form [formGroup]="form" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="text"> Введите имя</label>
+              <input autocomplete="new-password" (focus)="onFlag()" formControlName="name" type="text" class="foc-bread br-gray-bread form-control" id="name">
+             </div>
+            <div class="form-group">
+                <label for="number">Введите почту</label>
+                <input autocomplete="new-password" (focus)="onFlag()" formControlName="email" type="email" class="foc-bread br-gray-bread form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="weight">Введите логин</label>
+                <input autocomplete="new-login" (focus)="onFlag()" formControlName="login" type="text" class="foc-bread br-gray-bread form-control" id="login">
+            </div>
+            <div class="form-group">
+                <label for="weight">Введите пароль</label>
+                <input autocomplete="new-password" (focus)="onFlag()" formControlName="password" type="password" class="foc-bread br-gray-bread form-control" id="password">
+            </div>     
+            <div *ngIf="!existLogin" class="attention">
+                <span class="alert alert-warning mt-3" role="alert">Такой логин уже существует!</span>
+              </div>
+              <div *ngIf="!isEmpty" class="attention">
+                <span class="field-required alert alert-danger mt-3" role="alert">Одно или несколько полей пустые!</span>
+              </div>
+             <button class="btn btn-primary btn-gray-bread btn-block" (click)="onRegistr()">Зарегистрироваться</button>
+    <br><br><br><br><br><br><br>
+
+  </form>
+</div>
