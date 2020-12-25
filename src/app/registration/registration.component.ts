@@ -61,7 +61,7 @@ export class RegistrationComponent implements OnInit {
           this.user.name = ExistOrNot[0].name;
           this.user.email = ExistOrNot[0].email;
           console.log(this.user);
-          localStorage.setItem("id", this.user.id_user);
+          localStorage.setItem("id_user", this.user.id_user);
           localStorage.setItem("name", this.user.name);
           this.router.navigate(["/cabinet"]);
         } else {
